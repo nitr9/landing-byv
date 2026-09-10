@@ -1,0 +1,11 @@
+# Cabeceras que manda Netlify.
+#
+# ⛔ NO AGREGAR "X-Robots-Tag: noindex, nofollow". Acá hubo uno, puesto
+# cuando esto era una URL de previsualización, y quedó activo por error
+# después de que el sitio pasó a ser el definitivo: le estuvo diciendo a
+# Google que no indexara el sitio en producción.
+
+/*
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN

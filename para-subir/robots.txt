@@ -1,0 +1,7 @@
+# B&V Servicio Técnico — https://byvservicios.com.ar
+# Sitio público. Se permite el rastreo completo.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://byvservicios.com.ar/sitemap.xml

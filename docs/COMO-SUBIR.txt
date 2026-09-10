@@ -1,0 +1,120 @@
+CÓMO SUBIR LA CARPETA para-subir/
+=================================
+
+El sitio vive en https://byvservicios.com.ar
+
+Para actualizarlo: entrá a Netlify, al sitio "byvservicios", y arrastrá la
+carpeta para-subir/ entera a la zona de deploys. Reemplaza todo.
+
+  Netlify -> byvservicios -> Production deploys -> arrastrar la carpeta
+
+NO uses app.netlify.com/drop: eso crea un sitio NUEVO con otra URL, sin el
+dominio ni el certificado, y byvservicios.com.ar seguiría apuntando al
+proyecto viejo.
+
+Todo lo que se deje dentro de para-subir/ queda público. No pongas ahí
+notas, borradores ni capturas. Por eso este archivo vive en docs/ y no
+adentro de la carpeta que se sube.
+
+
+EL DOMINIO
+==========
+
+https://byvservicios.com.ar, registrado por DonWeb ante NIC.ar y con el
+DNS en Netlify.
+
+El subdominio viejo, https://byvservicios.netlify.app, sigue sirviendo la
+página y NO se desactiva.
+
+NO LO REDIRIJAS AL DOMINIO NUEVO. Lo que consolida el dominio nuevo es el
+canonical de cada página, no un redirect. El detalle está en _redirects,
+que quedó sin reglas activas y con la explicación adentro.
+
+En Netlify el subdominio NO deja de responder solo al poner el dominio
+propio como primario: se comprobó que sigue devolviendo el sitio entero
+con código 200.
+
+
+OJO CON TRES ARCHIVOS
+=====================
+
+  robots.txt
+  _headers
+  _redirects
+
+Estos archivos PERMITEN que Google rastree el sitio.
+
+NO los borres. NO pongas "noindex" en ninguno de ellos.
+
+Y _redirects es el que documenta por qué el subdominio viejo no redirige.
+
+
+QUÉ TIENE EL SITIO, Y NO HAY QUE SACAR
+======================================
+
+  - Footer con el responsable, domicilio completo, teléfono como enlace
+    tel:, email como enlace mailto: y horarios
+  - Sección "Quiénes somos" en primera persona
+  - Aviso de que es taller independiente y no service oficial de ninguna
+    marca (aparece dos veces, visible, no en letra chica)
+  - Página /privacidad
+  - Datos estructurados JSON-LD con sameAs apuntando a la ficha de Google
+  - robots.txt, sitemap.xml, meta author, Open Graph completo
+
+
+QUÉ NO HAY QUE AGREGAR NUNCA
+============================
+
+  - Formularios, campos de texto o cualquier captura de datos. Que el
+    sitio no recopile nada está afirmado por escrito en /privacidad.
+  - Google Analytics, pixel de Meta, banner de cookies o cualquier script
+    de seguimiento: contradiría la política de privacidad publicada.
+  - Precios, plazos de garantía o tiempos de respuesta: son condiciones
+    que después hay que poder sostener.
+
+
+DESPUÉS DE DESPLEGAR, VERIFICAR
+===============================
+
+1. Que https://byvservicios.com.ar/robots.txt diga "Allow: /"
+2. Que la respuesta NO traiga la cabecera X-Robots-Tag con noindex
+3. Que https://byvservicios.com.ar/privacidad/ abra bien (con la barra
+   final: es la URL que declaran el canonical y el sitemap)
+4. Que https://byvservicios.com.ar/sitemap.xml abra bien
+5. Que https://byvservicios.com.ar/assets/og.png abra bien
+6. Que https://byvservicios.netlify.app siga respondiendo y no quede caída
+7. Pegar la URL en el Rich Results Test de Google para validar el JSON-LD:
+   https://search.google.com/test/rich-results
+8. Pedir la indexación en Google Search Console
+
+
+PENDIENTE DE CONFIRMAR CON JUAN
+===============================
+
+  - El listado de fallas de cada equipo
+  - "Todas las marcas" (si hay alguna que no toca, poner "la mayoría")
+
+Ya resuelto:
+  - Horarios: confirmados, coinciden con la ficha de Google
+  - "Cerca de Plaza España": eliminado, era un dato sin confirmar
+  - Atiende a domicilio Y recibe equipos en el local: confirmado
+  - La foto del frente: era un montaje, se reemplazó por una foto real
+
+
+LA FOTO DE LA FICHA DE GOOGLE MAPS
+==================================
+
+En el sitio la foto retocada ya se reemplazó por la real. Si la retocada
+también está cargada en la ficha de Google Maps, HAY QUE BORRARLA DE AHÍ.
+
+Google pide fotos que "representen la realidad", sin alteraciones
+significativas. Y si la misma imagen compuesta está en el sitio Y en la
+ficha, queda el mismo dato inexacto repetido en las dos propiedades del
+negocio.
+
+Orden recomendado:
+  1. Subir la foto real a la ficha
+  2. Recién entonces borrar la retocada
+
+Así la ficha nunca queda sin imagen de portada, que es el momento en que
+Google puede tomar como principal una foto subida por un cliente.

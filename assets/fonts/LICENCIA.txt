@@ -1,0 +1,9 @@
+Archivo / Archivo Black / Archivo Narrow
+Copyright (c) Omnibus-Type
+
+Distribuidas bajo la SIL Open Font License, Version 1.1.
+Texto completo de la licencia: https://openfontlicense.org
+Proyecto original: https://github.com/Omnibus-Type/Archivo
+
+La OFL permite usar, estudiar, modificar y redistribuir estas fuentes,
+incluyendo alojarlas en el propio servidor, que es lo que hace este sitio.

@@ -1,0 +1,20 @@
+# Intermedios de las herramientas: tiles bajados, mosaicos, capturas de
+# auditoría, perfiles de Chrome. Todo regenerable.
+.tmp/
+
+# Copia para deploy: el grueso se regenera sincronizando desde la raíz, así que
+# no se versiona. PERO cinco archivos viven SÓLO acá y no son derivables de la
+# raíz, así que se rescatan abajo. Ojo con google58f4390859317fd5.html: si deja
+# de existir, Google revoca la verificación de Search Console.
+para-subir/*
+!para-subir/_headers
+!para-subir/_redirects
+!para-subir/robots.txt
+!para-subir/sitemap.xml
+!para-subir/google58f4390859317fd5.html
+
+# Chrome descargado por las herramientas de captura: 110 MB, regenerable.
+herramientas/chrome-shot/
+
+# Ajustes locales de Claude Code: rutas absolutas de esta máquina.
+.claude/settings.local.json

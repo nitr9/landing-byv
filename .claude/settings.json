@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/nico_/Desktop/correos cronologia/**)",
+      "WebSearch"
+    ]
+  }
+}

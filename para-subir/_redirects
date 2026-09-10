@@ -1,0 +1,29 @@
+# Redirecciones que aplica Netlify.
+#
+# El sitio vive en https://byvservicios.com.ar
+#
+# ⛔ NO PONER UN REDIRECT DEL SUBDOMINIO AL DOMINIO NUEVO.
+#
+# El subdominio https://byvservicios.netlify.app tiene que SEGUIR SIRVIENDO
+# LA PÁGINA, no un redirect: es una URL declarada como destino en otro lado,
+# y si redirige a otro dominio queda una discordancia entre el dominio
+# declarado y el dominio al que llega la visita.
+#
+# La consolidación hacia el dominio nuevo la hace el <link rel="canonical">,
+# que apunta a byvservicios.com.ar en todas las páginas.
+#
+# CUÁNDO SE PUEDE VOLVER A PONER: cuando ese destino declarado se pueda
+# actualizar a byvservicios.com.ar. Recién ahí el redirect deja de crear
+# discordancia. Las reglas quedan acá abajo, comentadas.
+#
+#   https://byvservicios.netlify.app/*  https://byvservicios.com.ar/:splat  301!
+#   http://byvservicios.netlify.app/*   https://byvservicios.com.ar/:splat  301!
+#
+# Y si se restauran, hay que restaurar también la excepción del archivo de
+# verificación de Search Console, que sin redirect no hace falta:
+#
+#   https://byvservicios.netlify.app/google58f4390859317fd5.html  /google58f4390859317fd5.html  200!
+#   http://byvservicios.netlify.app/google58f4390859317fd5.html   /google58f4390859317fd5.html  200!
+#
+# Este archivo queda sin reglas activas a propósito. No lo borres: es donde
+# está escrito por qué no las hay.
